@@ -1,0 +1,60 @@
+@import './fonts/iconfont.wxss';
+
+@keyframes anim {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+page {
+  font-size: 32rpx;
+}
+
+.preview-title {
+  text-align: center;
+  border-radius: 20rpx 0 20rpx 0 ;
+  width: 240rpx;
+  padding: 14rpx;
+  background-color: green;
+  margin: 0 auto;
+  color: #3366ff;
+  margin-bottom: 10rpx;
+  border: 1px solid #cddaff;
+  background-image: linear-gradient( #f2f4ff, #abc0ff);
+}
+
+.preview-image {
+  background-color: rgb(245, 245, 245);
+  width: 95%;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn {
+  width: 280rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10rpx;
+  background-image: linear-gradient(to right, #7b9cff, #3366ff);
+  color: white
+
+}
+
+.btn.plain {
+  border: 1px solid #3366ff;
+  background-image: none;
+  background-color: #eff3ff;
+  color: #3366ff;
+}
+
+.loading {
+  animation: anim 3s linear infinite;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+

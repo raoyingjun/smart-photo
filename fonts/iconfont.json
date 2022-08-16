@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2861028",
+      "name": "Loading",
+      "font_class": "Loading",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "5277266",
+      "name": "图像识别",
+      "font_class": "tuxiangshibie4",
+      "unicode": "e505",
+      "unicode_decimal": 58629
+    },
+    {
+      "icon_id": "7596073",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    }
+  ]
+}

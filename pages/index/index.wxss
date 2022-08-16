@@ -1,0 +1,30 @@
+.container {
+  padding-bottom: 40rpx;
+}
+
+.label {
+  background-color: red;
+  font-size: 30rpx;
+}
+
+.label-key,
+.label-value {
+  width: 50%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  float: left;
+}
+
+.label-key {
+  text-align: right;
+}
+
+.label-value {
+  text-align: left;
+}
+
+.quality {
+  font-size: 30rpx;
+  text-align: center;
+  margin: 10rpx;
+}

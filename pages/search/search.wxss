@@ -1,0 +1,27 @@
+.list {
+  column-count: 2;
+  column-gap: 12rpx;
+  padding: 12rpx;
+  box-sizing: border-box;
+}
+
+.list-item {
+  display: block;
+  break-inside: avoid;
+  width: 100%;
+  margin-bottom: 12rpx;
+  background-color: rgb(245, 245, 245);
+}
+
+.result-title {
+  display: inline-block;
+  padding: 4rpx 0;
+  color: rgb(71, 71, 71);
+}
+
+.msg {
+  text-align: center;
+  font-size: 28rpx;
+  color: gray;
+  margin-bottom: 12rpx;
+}
