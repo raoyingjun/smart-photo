@@ -20,7 +20,7 @@ Page({
   },
   previewImage(e) {
     wx.previewImage({
-      urls: this.data.previewList,
+      urls: [e.currentTarget.dataset.url],
       current: e.currentTarget.dataset.url
     })
   },
@@ -32,13 +32,13 @@ Page({
       })
       return
     }
-    wx.chooseImage({
+    wx.chooseMedia({
       count: 1,
-      sizeType: ['original', 'compressed'],
+      mediaType: ['image', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
         this.setData({
-          preview: res.tempFilePaths[0],
+          preview: res.tempFiles[0].tempFilePath,
           previewList: [],
           list: [],
           page: 1,
@@ -56,10 +56,7 @@ Page({
     wx.uploadFile({
       filePath: this.data.preview,
       name: 'file',
-      formData: {
-        page: this.data.page
-      },
-      url: `${REQUEST_URL}/similar`,
+      url: `${REQUEST_URL}/upload?page=${this.data.page}`,
       success: res => {
         const data = JSON.parse(res.data)
         const code = data.code

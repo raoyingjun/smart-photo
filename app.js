@@ -3,6 +3,6 @@ App({
   onLaunch() {
   },
   globalData: {
-    REQUEST_URL: 'http://8.129.67.113:9876'
+    REQUEST_URL: 'http://175.178.106.215:9876'
   }
 })

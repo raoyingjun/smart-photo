@@ -21,13 +21,13 @@ Page({
       })
       return
     }
-    wx.chooseImage({
+    wx.chooseMedia({
       count: 1,
-      sizeType: ['original', 'compressed'],
+      mediaType: ['image', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
         this.setData({
-          preview: res.tempFilePaths[0]
+          preview: res.tempFiles[0].tempFilePath
         })
       }
     })
