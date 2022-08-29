@@ -16,7 +16,7 @@ page {
 .preview-title {
   text-align: center;
   border-radius: 20rpx 0 20rpx 0 ;
-  width: 240rpx;
+  width: 300rpx;
   padding: 14rpx;
   background-color: green;
   margin: 0 auto;
