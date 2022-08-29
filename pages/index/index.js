@@ -5,7 +5,15 @@ const REQUEST_URL = app.globalData.REQUEST_URL
 
 Page({
   data: {
-    functions: ['智能调整曝光', '图像构成分析', '图像质量评分', '图像清晰度增强', '图像色彩增强'],
+    functions: [
+      '智能调整曝光',
+      '图像构成分析',
+      '图像质量评分',
+      '图像清晰度增强',
+      '图像色彩增强',
+      '图像去雾',
+      '黑白图像上色'
+    ],
     index: 0,
     loading: false
   },
@@ -61,8 +69,14 @@ Page({
       case 3: // 图像清晰度增强
         this.enhanceDefinition()
         break
-      case 4:
+      case 4: // 图形色彩增强
         this.enhanceColor()
+        break
+      case 5: // 图像去雾
+        this.imageDehaze()
+        break
+      case 6: // 黑白图像上色
+        this.imageColourize()
         break
       default:
         break
@@ -179,6 +193,46 @@ Page({
         console.log(data)
         this.setData({
           targetColorImage: this.formatBase64(this.data.preview, data.data.image)
+        })
+      },
+      fail: error => {
+        this.showErrorMessage()
+      },
+      complete: () => {
+        this.setLoading(false)
+      }
+    })
+  },
+  imageDehaze() {
+    wx.uploadFile({
+      filePath: this.data.preview,
+      name: 'file',
+      url: `${REQUEST_URL}/dehaze`,
+      success: res => {
+        const data = JSON.parse(res.data)
+        console.log(data)
+        this.setData({
+          targetDehazeImage: this.formatBase64(this.data.preview, data.data.image)
+        })
+      },
+      fail: error => {
+        this.showErrorMessage()
+      },
+      complete: () => {
+        this.setLoading(false)
+      }
+    })
+  },
+  imageColourize() {
+    wx.uploadFile({
+      filePath: this.data.preview,
+      name: 'file',
+      url: `${REQUEST_URL}/colourize`,
+      success: res => {
+        const data = JSON.parse(res.data)
+        console.log(data)
+        this.setData({
+          targetColourizeImage: this.formatBase64(this.data.preview, data.data.image)
         })
       },
       fail: error => {
